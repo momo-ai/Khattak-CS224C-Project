@@ -88,6 +88,14 @@ def clean_txt(text):
     word_tokens = [t for t in word_tokens if t not in stop_words] # remove stop words
     return sentence_tokens, word_tokens
 
+def to_csv(words, sentences, file):
+    df = pd.DataFrame(sentences)
+    df2 = pd.DataFrame(words)
+    df.to_csv(str(file) + '_sentences.csv', index=True)
+    df2.to_csv(str(file) + '_wordvec.csv', index=True)
+    print("All done!")
+
+
 def pdf_to_clean(file):
     # open pdf and convert to pypdf object
     pdf = open(file, 'rb')
@@ -100,8 +108,7 @@ def pdf_to_clean(file):
     if txt != '':
         # clean data, receive sentence and word vec
         sentences, words = clean_txt(txt)
-        # preprocess word vector via BoW
-        bag_of_words = baggify(words)
+        to_csv(words, sentences, file[0:len(file)-4])
     # else extract text data via OCR
     else:
         print("HEYA BUNCHA, TODO: USE TESSERACT OCR")
@@ -130,7 +137,7 @@ def epub_to_clean(file):
     for c in text_to_chap:
         megalostring += text_to_chap[c] + ' '
     sentences, words = clean_txt(megalostring)
-    baggify(words)
+    to_csv(words, sentences, file[0:len(file)-4])
 
 def main(path):
     file_dir = os.path.dirname(os.path.realpath('__file__'))

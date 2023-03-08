@@ -3,11 +3,11 @@ import pandas as pd
 
 LEFT_SUBREDDITS = ['ShitLiberalsSay', 'LateStageGenderBinary', 'RadicalQueers', 'GenderQueer', 'LateStageCapitalism', 'LateStageColonialism']
 
-reddit_authorized = praw.Reddit(client_id="nJb1PxPT5tJCDDNlQ4BBcg",
-                                client_secret="dCU5OB0iCJRfMynkkG-5HE3CFcUqyQ",
-                                user_agent="Green-Mud1928",
-                                username="Green-Mud1928",
-                                password="pooploop123")
+reddit_authorized = praw.Reddit(client_id="--",
+                                client_secret="--",
+                                user_agent="--",
+                                username="--",
+                                password="--")
 
 i = 0
 
