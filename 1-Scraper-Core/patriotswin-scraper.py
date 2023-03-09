@@ -97,17 +97,17 @@ def extract_authors(webpage, link):
 
 authors = set()
 
+# code commented out for author collection
 for link in links:
     authors = authors.union(extract_authors(browser, link["href"]))
-    # # if link.text in curr_titles:
-    # #     continue
-    # # posts_dict["Title"].append(link.text)
-    # # posts_dict["Post URL"].append(link["href"])
-    # # comments = extract_comments(browser, link["href"])
-    # # tot_comments += len(comments)
-    # # print(tot_comments)
-    # # posts_dict["Post Comments"].append(comments)
-    # all_authors = extract_comments(browser, link["href"])
+    # if link.text in curr_titles:
+    #     continue
+    # posts_dict["Title"].append(link.text)
+    # posts_dict["Post URL"].append(link["href"])
+    # comments = extract_comments(browser, link["href"])
+    # tot_comments += len(comments)
+    # print(tot_comments)
+    # posts_dict["Post Comments"].append(comments)
 
 # top_posts = pd.DataFrame(authors)
 
